@@ -33,10 +33,29 @@
       <h3>Gościnność na najwyższym poziomie</h3>
       <p>Dbamy o każdy szczegół, aby Twój pobyt był niezapomniany.</p>
     </section>
+
+    <section class="rooms-offer">
+      <div class="offer" v-for="(offer, index) in offers" :key="index">
+        <div class="offer-info">
+
+        </div>
+      </div>
+    </section>
   </div>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import { ref } from 'vue';
+
+
+const offers = ref([
+
+
+]
+)
+
+
+</script>
 
 <style lang="scss" scoped>
 .home-view {
