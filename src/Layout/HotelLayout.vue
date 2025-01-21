@@ -12,13 +12,14 @@
       <router-view />
     </main>
 
-    <footer class="main-footer"></footer>
+    <Footer />
   </div>
 </template>
 
 <script setup lang="ts">
-import type { INavItem } from "@/components/Navigation/NavigationMenu.types";
-import NavigationMenu from "@/components/Navigation/NavigationMenu.vue";
+import type { INavItem } from "@/components/Shared/Navigation/NavigationMenu.types";
+import NavigationMenu from "@/components/Shared/Navigation/NavigationMenu.vue";
+import Footer from "@/components/Shared/Footer/Footer.vue";
 import { ref } from "vue";
 
 const navItems = ref<INavItem[]>([
@@ -31,6 +32,10 @@ const navItems = ref<INavItem[]>([
 
 <style lang="scss" scoped>
 .layout-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+
   .main-header {
     position: fixed;
     top: 0;
@@ -43,6 +48,7 @@ const navItems = ref<INavItem[]>([
     align-items: center;
     padding: 0 2.5em;
     gap: 8em;
+    z-index: 1;
 
     img {
       height: 50px;
@@ -68,6 +74,9 @@ const navItems = ref<INavItem[]>([
         background-color: #494848;
       }
     }
+  }
+  .content {
+    flex: 1;
   }
 }
 </style>

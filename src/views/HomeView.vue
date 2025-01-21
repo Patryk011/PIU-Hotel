@@ -4,57 +4,71 @@
       <img src="../assets/Banner.png" alt="" />
     </div>
 
-    <section class="info">
-      <h2>Dlaczego my?</h2>
+    <Info />
 
-      <h3>🏨 Wyjątkowy komfort</h3>
-      <p>
-        Oferujemy eleganckie pokoje zaprojektowane z myślą o Twoim komforcie i
-        relaksie.
-      </p>
+    <Offers :offers />
 
-      <h3>🍽 Wyśmienita kuchnia</h3>
-      <p>
-        Nasza restauracja serwuje dania przygotowywane z najwyższej jakości
-        składników.
-      </p>
-
-      <h3>🌍 Doskonała lokalizacja</h3>
-      <p>
-        Znajdujemy się w sercu miasta, blisko głównych atrakcji turystycznych.
-      </p>
-
-      <h3>💼 Idealne miejsce na biznes</h3>
-      <p>
-        Nowoczesne sale konferencyjne i szybki internet dla Twoich spotkań
-        biznesowych.
-      </p>
-
-      <h3>Gościnność na najwyższym poziomie</h3>
-      <p>Dbamy o każdy szczegół, aby Twój pobyt był niezapomniany.</p>
-    </section>
-
-    <section class="rooms-offer">
-      <div class="offer" v-for="(offer, index) in offers" :key="index">
-        <div class="offer-info">
-
-        </div>
-      </div>
-    </section>
+    <Opinions :opinions />
   </div>
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue';
+import Info from "@/components/Home/Info.vue";
+import Offers from "@/components/Home/Offers.vue";
+import Opinions, { type IOpinion } from "@/components/Home/Opinions.vue";
+import Footer from "@/components/Shared/Footer/Footer.vue";
 
+import { ref } from "vue";
+
+const opinions = ref<IOpinion[]>([
+  {
+    image: "human1",
+    opinion: "To miejsce jest niesamowite!",
+    author: "Jan Kowalski",
+  },
+  {
+    image: "human2",
+    opinion: "Świetna obsługa i atmosfera.",
+    author: "Anna Nowak",
+  },
+  {
+    image: "human3",
+    opinion: "Niezapomniane doświadczenie.",
+    author: "Piotr Zieliński",
+  },
+  { image: "human4", opinion: "Polecam każdemu!", author: "Ewa Wiśniewska" },
+  {
+    image: "human5",
+    opinion: "Idealne miejsce na relaks.",
+    author: "Michał Wójcik",
+  },
+]);
 
 const offers = ref([
+  {
+    title: "Pokój 1 osobowy",
+    cost: "250 zł/noc",
 
+    rating: "4.7",
+    image: "room1",
+  },
 
-]
-)
+  {
+    title: "Pokój 2 osobowy",
+    cost: "350 zł/noc",
 
+    rating: "4.8",
+    image: "room2",
+  },
 
+  {
+    title: "Pokój 3 osobowy",
+    cost: "450 zł/noc",
+
+    rating: "4.8",
+    image: "room3",
+  },
+]);
 </script>
 
 <style lang="scss" scoped>
@@ -66,52 +80,6 @@ const offers = ref([
   .img-wrapper {
     padding: 1em;
     align-self: center;
-  }
-
-  .info {
-    background-color: #f7f7f7;
-    padding: 2em;
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-
-    h2 {
-      font-size: 2rem;
-      color: #333;
-      margin-bottom: 1.5em;
-    }
-
-    h3 {
-      font-size: 1.5rem;
-      color: #555;
-      margin-bottom: 0.5em;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    p {
-      font-size: 1rem;
-      color: #666;
-      margin-bottom: 1.5em;
-      line-height: 1.6;
-    }
-
-    @media (max-width: 768px) {
-      padding: 1em;
-
-      h2 {
-        font-size: 1.8rem;
-      }
-
-      h3 {
-        font-size: 1.3rem;
-      }
-
-      p {
-        font-size: 0.9rem;
-      }
-    }
   }
 }
 </style>
