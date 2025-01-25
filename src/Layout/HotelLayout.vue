@@ -5,7 +5,9 @@
         <img src="../assets/logo.png" alt="Hotel logo" />
       </router-link>
       <NavigationMenu :navItems />
-      <button class="login">Zaloguj się</button>
+      <button class="login" @click="router.push('/logowanie')">
+        Zaloguj się
+      </button>
     </header>
 
     <main class="content">
@@ -21,6 +23,7 @@ import type { INavItem } from "@/components/Shared/Navigation/NavigationMenu.typ
 import NavigationMenu from "@/components/Shared/Navigation/NavigationMenu.vue";
 import Footer from "@/components/Shared/Footer/Footer.vue";
 import { ref } from "vue";
+import router from "@/router";
 
 const navItems = ref<INavItem[]>([
   { label: "Cennik", link: "/cennik" },

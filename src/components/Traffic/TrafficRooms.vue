@@ -10,7 +10,9 @@
         <div class="offer-details">
           <h3>{{ offer.cost }}</h3>
         </div>
-        <button class="reserve">Zarezerwuj</button>
+        <button class="reserve" @click="reserveRoom(offer.title, offer.cost)">
+          Zarezerwuj
+        </button>
       </div>
     </div>
   </section>
@@ -30,6 +32,10 @@ interface ITrafficProps {
 }
 
 defineProps<ITrafficProps>();
+
+const reserveRoom = (title: string, cost: string) => {
+  alert(`Rezerwacja dla ${title}, koszt: ${cost}`);
+};
 </script>
 
 <style lang="scss" scoped>
@@ -37,7 +43,7 @@ defineProps<ITrafficProps>();
   display: flex;
   flex-direction: column;
   gap: 5em;
-  padding: 5em;
+  padding: 10em;
 
   h2 {
     text-align: center;
@@ -51,8 +57,11 @@ defineProps<ITrafficProps>();
 
     .offer-card {
       border: 1px solid #e7e6eb;
-      border-radius: 0.5em;
-      padding: 0.5em 0.5em 1em 0.5em;
+      border-radius: 0.2em;
+      padding: 1.2em 0.7em 1.5em 0.7em;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75em;
 
       .image-container {
         img {
@@ -62,9 +71,18 @@ defineProps<ITrafficProps>();
       }
 
       .offer-details {
-        padding-top: 1em;
-        line-height: 1.8;
+        line-height: 2;
         font-size: 1em;
+      }
+
+      .reserve {
+        border: none;
+        color: white;
+        background-color: #1e1e1e;
+        cursor: pointer;
+        padding: 0.5em;
+        border-radius: 0.5em;
+        width: 100%;
       }
     }
   }
