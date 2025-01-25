@@ -17,6 +17,7 @@
         <router-link :to="'/'">Cennik </router-link>
         <router-link :to="'/'">Pokoje</router-link>
         <router-link :to="'/'">O nas</router-link>
+        <router-link :to="'/kontakt'">Kontakt</router-link>
       </div>
     </div>
 
