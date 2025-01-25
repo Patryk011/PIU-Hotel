@@ -55,23 +55,9 @@ defineProps<ITrafficProps>();
       padding: 0.5em 0.5em 1em 0.5em;
 
       .image-container {
-        position: relative;
-
         img {
           width: 100%;
           height: auto;
-        }
-
-        .rating {
-          position: absolute;
-          top: 0.95em;
-          left: 0.625em;
-          background-color: rgba(255, 255, 255, 0.8);
-          border-radius: 0.5em;
-          width: 4em;
-          height: 2em;
-          padding-top: 0.4em;
-          text-align: center;
         }
       }
 
@@ -79,12 +65,6 @@ defineProps<ITrafficProps>();
         padding-top: 1em;
         line-height: 1.8;
         font-size: 1em;
-      }
-      .icons {
-        display: flex;
-        justify-content: start;
-        gap: 3em;
-        padding-top: 0.5em;
       }
     }
   }
