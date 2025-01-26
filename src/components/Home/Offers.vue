@@ -12,8 +12,8 @@
           <p>{{ offer.cost }}</p>
         </div>
         <div class="icons">
-          <Icon :icon-type="'Bed'" :width="20" :height="20" />
-          <Icon :icon-type="'User'" :width="20" :height="20" />
+          <Icon :icon-type="'Bed'" />
+          <Icon :icon-type="'User'" />
         </div>
       </div>
     </div>

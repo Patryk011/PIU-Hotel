@@ -28,8 +28,8 @@ onMounted(async () => {
 const iconStyles = computed<CSSProperties>(() => ({
   "--fill": props.color,
   ...(props.hoverColor && { "--hover-fill": props.hoverColor }),
-  width: props.width ? props.width : "32px",
-  height: props.height ? props.height : "32px",
+  width: props.width ? `${props.width}px` : "32px",
+  height: props.height ? `${props.height}px` : "32px",
 }));
 </script>
 
